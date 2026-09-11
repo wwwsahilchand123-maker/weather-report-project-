@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07101f">
+  <title>WeatherNova — Live Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <div class="backdrop"><div class="glow glow-a"></div><div class="glow glow-b"></div><div class="celestial-sun" id="skySun"><div class="sun-core"></div></div><div class="celestial-moon" id="skyMoon"><div class="moon-core"></div></div><div class="sky-stars" id="skyStars"></div><div class="sky-rain" id="skyRain"></div></div>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home"><span class="brand-mark">☁</span><span>Weather<span>Nova</span></span></a>
+    <p class="tagline">Live Weather. A Better Tomorrow.</p>
+    <nav class="nav">
+      <button class="nav-btn active" data-target="home"><span>⌂</span> Home</button>
+      <button class="nav-btn" data-target="forecast-section"><span>▣</span> Forecast</button>
+      <button class="nav-btn" data-action="map"><span>⌖</span> Maps</button>
+      <button class="nav-btn" data-action="air"><span>♧</span> Air Quality</button>
+      <button class="nav-btn" data-action="settings"><span>⚙</span> Settings</button>
+      <button class="nav-btn" data-action="about"><span>ⓘ</span> About</button>
+    </nav>
+    <div class="sidebar-quote">“Good weather<br>brings better days.”<b>— WeatherNova</b></div>
+  </aside>
+  <main class="app" id="home">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn">☰</button>
+      <form class="search" id="searchForm"><span>⌕</span><input id="cityInput" autocomplete="off" placeholder="Search for a city (e.g. Delhi, Mumbai, London)…"><button>Search</button></form>
+      <button class="location-btn" id="locationBtn">⌖ <span>Use My Location</span></button>
+      <div class="top-controls"><button class="toggle" id="themeBtn"><span>☀</span><i>☾</i></button><button class="unit-toggle" id="unitBtn"><b>°C</b><span>°F</span></button><button class="profile" id="aboutBtn">●</button></div>
+    </header>
+    <div class="city-chips" id="chips"><button data-city="Delhi">Delhi</button><button data-city="Mumbai">Mumbai</button><button data-city="Bengaluru">Bengaluru</button><button data-city="London">London</button><button data-city="New York">New York</button><button data-city="Tokyo">Tokyo</button><button data-city="Paris">Paris</button><button data-city="Dubai">Dubai</button></div>
+    <div class="dashboard-head"><div><div class="live-label"><i></i> LIVE ATMOSPHERIC INTELLIGENCE</div><h1>Weather,<br><em>reimagined.</em></h1></div><div class="clock"><span id="dateText">—</span><strong id="clockText">—</strong><small>Stay aware, stay prepared!</small></div></div>
+    <div id="status" class="status">Connecting to live weather…</div>
+    <section class="hero-grid" id="current-section">
+      <article class="card current-card"><div class="current-copy"><div class="place"><span class="pin">●</span><div><h2 id="place">Delhi, India</h2><p id="condition">Loading…</p></div></div><div class="temperature"><strong id="temp">—</strong><span id="degree">°C</span></div><p class="feels">Feels like <b id="feels">—</b></p></div><div class="weather-art" id="weatherArt"><div class="sun-art"></div><div class="cloud-art"></div></div><div class="mini-metrics"><div><span>💧</span><b id="humidity">—</b><small>Humidity</small></div><div><span>≋</span><b id="wind">—</b><small>Wind Speed</small></div><div><span>◉</span><b id="pressure">—</b><small>Pressure</small></div><div><span>◉</span><b id="visibility">10 km</b><small>Visibility</small></div></div></article>
+      <article class="card insight-card"><div class="card-title"><span>SMART INSIGHT</span><i></i></div><h3 id="insightTitle">Good afternoon!</h3><p id="insightText">Fetching a plain-English weather brief for you.</p><div class="meter"><label>Comfort <b id="comfortValue">—</b></label><div><i id="comfortBar"></i></div></div><div class="meter"><label>Rain risk <b id="rainValue">—</b></label><div><i id="rainBar"></i></div></div><div class="meter"><label>UV exposure <b id="uvValue">—</b></label><div><i id="uvBar"></i></div></div><div class="tip" id="tip">✦ Preparing your weather plan…</div></article>
+    </section>
+    <section class="section-block" id="forecast-section"><div class="section-heading"><div><span>FORECAST</span><h2>Hourly forecast</h2></div><button class="text-btn" data-scroll="weekly-section">View 24 Hours →</button></div><div class="hours" id="hours"></div></section>
+    <section class="split-grid" id="weekly-section"><article class="card forecast-card"><div class="section-heading compact"><div><span>EXTENDED OUTLOOK</span><h2>7 Day Forecast</h2></div><button class="text-btn" data-action="forecast">Details →</button></div><div class="week" id="forecast"></div></article><article class="card air-card" id="air-card"><div class="section-heading compact"><div><span>AIR QUALITY</span><h2>Air Quality</h2></div><strong class="aq-good" id="aqLabel">—</strong></div><div class="aq-row"><strong id="aqValue">—</strong><span>AQI</span></div><p id="aqText">Loading air quality…</p><div class="aq-scale"><i id="aqMarker"></i></div><small>Based on PM2.5, PM10, ozone and local air-quality data.</small></article></section>
+    <section class="stats-grid" id="details-section"><article class="card stat-card"><span>🌡 Temperature</span><strong id="statTemp">—</strong><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i></div><small id="minmax">—</small></article><article class="card stat-card"><span>💧 Humidity</span><div class="stat-body"><strong id="statHum">—</strong><div class="ring" id="humRing"><b>—</b></div></div><small id="humText">—</small></article><article class="card stat-card"><span>≋ Wind Speed</span><div class="stat-body"><strong id="statWind">—</strong><div class="compass"><i></i><b>N</b><b>E</b><b>S</b><b>W</b></div></div><small id="windText">—</small></article><article class="card stat-card"><span>☀ UV Index</span><strong id="statUV">—</strong><div class="uv-scale"><i></i><i></i><i></i><i></i><i></i></div><small id="uvText">—</small></article><article class="card stat-card"><span>◉ Pressure</span><strong id="statPressure">—</strong><div class="bars-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>Normal atmospheric pressure</small></article></section>
+    <section class="sun-grid"><article class="card sun-card"><div class="section-heading compact"><div><span>SUN CYCLE</span><h2>Sunrise & Sunset</h2></div></div><div class="sun-arc"><i id="sunDot"></i></div><div class="sun-times"><span>☀ Sunrise<strong id="sunrise">—</strong></span><span>☾ Sunset<strong id="sunset">—</strong></span></div></article><article class="card data-card"><div class="section-heading compact"><div><span>ATMOSPHERIC DATA</span><h2>Live details</h2></div></div><div class="data-list"><div>Precipitation<strong id="precip">—</strong></div><div>Wind Direction<strong id="winddir">—</strong></div><div>Cloud Cover<strong id="cloud">—</strong></div><div>Coordinates<strong id="coords">—</strong></div></div></article></section>
+    <footer><span>WeatherNova <b>|</b> Live Data <b>|</b> A Cleaner & Safer Tomorrow</span><span>Made with ❤️ by Sahil Chand</span></footer>
+  </main>
+  <div class="modal hidden" id="modal"><div class="modal-box"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div><div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
