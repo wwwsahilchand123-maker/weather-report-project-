@@ -1,9 +1,8 @@
 <div align="center">
 
-# 🌦️ WEATHERNOVA
-### `LIVE WEATHER • REAL-TIME INSIGHTS • A BETTER TOMORROW`
+<img src="https://raw.githubusercontent.com/wwwsahilchand123-maker/weather-report-project-/main/assets/weather-banner.svg" width="100%" alt="WeatherNova animated weather scene" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=24&pause=900&color=38BDF8&center=true&vCenter=true&width=700&lines=Weather%2C+Reimagined.;Track+The+Sky.+Understand+The+Day.;Live+Weather+%7C+Smart+Insights+%7C+Beautiful+UI" alt="WeatherNova typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=22&pause=900&color=38BDF8&center=true&vCenter=true&width=760&lines=Weather%2C+Reimagined.;Track+The+Sky.+Understand+The+Day.;Live+Weather+%7C+Smart+Insights+%7C+Beautiful+UI" alt="WeatherNova typing animation" />
 
 <p>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
@@ -48,6 +47,8 @@ Search a city, use your location, switch between °C/°F, explore hourly and wee
 ---
 
 ## 🎨 Visual Direction
+
+The README now includes a **live SVG weather scene** with animated clouds, rain, glowing celestial light, twinkling stars, pulsing status nodes and an atmospheric signal wave.
 
 ```text
         ☀️ / 🌙
@@ -119,6 +120,8 @@ weather-report-project-
 ├── index.html       # Dashboard structure
 ├── style.css        # UI, animations & responsive design
 ├── app.js           # Weather API + interactions
+├── assets/
+│   └── weather-banner.svg  # Animated README weather scene
 └── README.md        # Project documentation
 ```
 
