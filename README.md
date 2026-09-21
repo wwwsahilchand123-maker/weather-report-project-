@@ -108,7 +108,7 @@ Then open:
 http://localhost:5500
 ```
 
-> 📍 Browser location access works best through `localhost` or another secure context.
+> 📍 Browser location access works best through `localhost` or another secure context. The app should request location only after the user chooses **My Location**.
 
 ---
 
@@ -126,6 +126,10 @@ weather-report-project-
 ```
 
 ---
+
+## 🔐 Privacy Notes
+
+WeatherNova can use browser geolocation when the user explicitly selects **My Location**. Location data should be treated as sensitive: do not persist precise coordinates or share them with third parties beyond the selected weather/map services. City searches can be used when users prefer not to grant location access.
 
 ## 🌐 Data Sources
 
